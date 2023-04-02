@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/consts/colors.dart';
+import 'package:healthapp/pages/appt_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,7 +11,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List symptoms = ["Temprature", "Snuffle", "Fever", "Cough", "Cold"];
+  List symptoms = [
+    "Temprature",
+    "Snuffle",
+    "Fever",
+    "Cough",
+    "Cold",
+    "Running nose"
+  ];
+  List doctorsname = ['Dr. Verma', 'Dr. Singh', 'Dr. Ahuja', 'Dr. Oberoi'];
+  List designation = [
+    'Physician',
+    'Neurologist',
+    'Cardiologist',
+    'Dermatologist'
+  ];
+  List rating = ['4.5', '4.2', '4.9', '4.7'];
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -33,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   CircleAvatar(
                     radius: 24,
-                    backgroundImage: AssetImage('assets/doc-1.jpg'),
+                    backgroundImage: AssetImage('assets/doc-0.jpg'),
                   ),
                 ],
               ),
@@ -67,6 +83,7 @@ class _HomePageState extends State<HomePage> {
                         ]),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           padding: EdgeInsets.all(10),
@@ -87,13 +104,195 @@ class _HomePageState extends State<HomePage> {
                           'Clinic visit',
                           style: GoogleFonts.notoSerif(
                               fontWeight: FontWeight.bold, fontSize: 18),
-                        )
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Make an appointment',
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        color: AppColors.secColor,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1,
+                          ),
+                          BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1,
+                          )
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: AppColors.primColor,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Container(
+                            child: Icon(
+                              Icons.home,
+                              color: AppColors.secColor,
+                              size: 25,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: screenHeight * 0.03),
+                        Text(
+                          'Home visit',
+                          style: GoogleFonts.notoSerif(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Call the doctor at home',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'What are your symptoms',
+                style: GoogleFonts.notoSerif(
+                    color: Colors.black54,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.01,
+            ),
+            SizedBox(
+              height: screenHeight * 0.08,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: symptoms.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                        color: AppColors.secColor,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 5,
+                            spreadRadius: 2,
+                          ),
+                        ]),
+                    child: Center(
+                      child: Text(
+                        symptoms[index],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.nunitoSans(
+                            fontSize: 15, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.5),
+              child: Text(
+                'Available doctors',
+                style: GoogleFonts.notoSerif(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black54,
+                ),
+              ),
+            ),
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemCount: 4,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  var ind = index.toString();
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AppointPage()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 5,
+                              spreadRadius: 1,
+                            ),
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage('assets/doc-$ind.jpg'),
+                          ),
+                          Text(
+                            doctorsname[index],
+                            style: GoogleFonts.notoSans(
+                                fontWeight: FontWeight.bold, fontSize: 15),
+                          ),
+                          Text(
+                            designation[index],
+                            style: GoogleFonts.notoSans(
+                                fontWeight: FontWeight.w300, fontSize: 13),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              Text(rating[index]),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                })
           ],
         ),
       ),

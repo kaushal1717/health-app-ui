@@ -109,7 +109,9 @@ class WelcomeScreen extends StatelessWidget {
                     )),
                   ),
                   CustomButton(
-                    onpressed: () {},
+                    onpressed: () {
+                      Navigator.pushNamed(context, '/navbar');
+                    },
                     child: Row(
                       children: [
                         Tab(
