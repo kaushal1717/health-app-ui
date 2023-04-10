@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     "Cold",
     "Running nose"
   ];
-  List doctorsname = ['Dr. Verma', 'Dr. Singh', 'Dr. Ahuja', 'Dr. Oberoi'];
+  List doctorsname = ['Dr. name 1', 'Dr. name 2', 'Dr.name 3', 'Dr. name 4'];
   List designation = [
     'Physician',
     'Neurologist',
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   CircleAvatar(
                     radius: 24,
-                    backgroundImage: AssetImage('assets/doc-0.jpg'),
+                    backgroundImage: AssetImage('assets/person-2.jpeg'),
                   ),
                 ],
               ),
@@ -110,6 +110,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           'Make an appointment',
+                          style: GoogleFonts.openSans(),
                         ),
                       ],
                     ),
@@ -165,6 +166,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           'Call the doctor at home',
+                          style: GoogleFonts.openSans(),
                         ),
                       ],
                     ),
@@ -180,7 +182,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'What are your symptoms',
                 style: GoogleFonts.notoSerif(
-                    color: Colors.black54,
+                    color: AppColors.fontColor,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
@@ -228,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                 style: GoogleFonts.notoSerif(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
-                  color: Colors.black54,
+                  color: AppColors.fontColor,
                 ),
               ),
             ),
@@ -239,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  var ind = index.toString();
+                  String ind = index.toString();
                   return InkWell(
                     onTap: () {
                       Navigator.push(
