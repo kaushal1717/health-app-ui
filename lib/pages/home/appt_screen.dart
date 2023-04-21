@@ -17,7 +17,7 @@ class AppointPage extends StatelessWidget {
           children: [
             SizedBox(height: screenHeight * 0.039),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Stack(
                 children: [
                   Row(
@@ -27,7 +27,7 @@ class AppointPage extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
                           color: AppColors.secColor,
                           size: 25,
@@ -35,7 +35,7 @@ class AppointPage extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Icon(
+                        child: const Icon(
                           Icons.more_vert,
                           color: AppColors.secColor,
                           size: 25,
@@ -44,11 +44,11 @@ class AppointPage extends StatelessWidget {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
+                    padding: const EdgeInsets.only(top: 20, bottom: 20),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.account_circle,
                             size: 65,
                           ),
@@ -74,24 +74,24 @@ class AppointPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color.fromARGB(255, 195, 138, 142),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.call,
                                   size: 22,
                                 ),
                               ),
                               SizedBox(width: screenWidth * 0.06),
                               Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color.fromARGB(255, 195, 138, 142),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.chat_bubble,
                                   size: 22,
                                 ),
@@ -106,12 +106,12 @@ class AppointPage extends StatelessWidget {
             Container(
               height: screenHeight / 1.5,
               width: double.infinity,
-              padding: EdgeInsets.only(top: 20, left: 15),
+              padding: const EdgeInsets.only(top: 20, left: 15),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
+                  borderRadius: BorderRadius.circular(10).copyWith(
+                    bottomLeft: Radius.zero,
+                    bottomRight: Radius.zero,
                   )),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -146,7 +146,7 @@ class AppointPage extends StatelessWidget {
                       SizedBox(
                         width: screenWidth * 0.015,
                       ),
-                      Icon(
+                      const Icon(
                         Icons.star,
                         color: Colors.amber,
                       ),
@@ -177,7 +177,7 @@ class AppointPage extends StatelessWidget {
                           style: GoogleFonts.notoSerif(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
-                              color: Color.fromARGB(255, 224, 151, 156)),
+                              color: const Color.fromARGB(255, 224, 151, 156)),
                         ),
                       ),
                     ],
@@ -190,12 +190,12 @@ class AppointPage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             String ind = index.toString();
                             return Container(
-                              margin: EdgeInsets.only(
+                              margin: const EdgeInsets.only(
                                   top: 10, right: 15, bottom: 10, left: 5),
                               decoration: BoxDecoration(
                                   color: AppColors.secColor,
                                   borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                         color: Colors.grey,
                                         blurRadius: 4,
@@ -219,7 +219,7 @@ class AppointPage extends StatelessWidget {
                                           fontSize: 15,
                                         ),
                                       ),
-                                      subtitle: Text(
+                                      subtitle: const Text(
                                         'x days ago',
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(fontSize: 10),
@@ -228,7 +228,7 @@ class AppointPage extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        children: [
+                                        children: const [
                                           Icon(
                                             Icons.star,
                                             color: Colors.amber,
@@ -241,8 +241,8 @@ class AppointPage extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 10),
                                       child: Text(
                                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
                                     ),
@@ -259,12 +259,10 @@ class AppointPage extends StatelessWidget {
                         fontSize: 20),
                   ),
                   ListTile(
-                    leading: Container(
-                      child: Icon(
-                        Icons.location_on,
-                        color: AppColors.primColor,
-                        size: 30,
-                      ),
+                    leading: const Icon(
+                      Icons.location_on,
+                      color: AppColors.primColor,
+                      size: 30,
                     ),
                     title: Text(
                       'Surat, Gujarat',
@@ -272,7 +270,7 @@ class AppointPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text('Address line'),
+                    subtitle: const Text('Address line'),
                   ),
                 ],
               ),
@@ -281,9 +279,9 @@ class AppointPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         height: 140,
-        decoration: BoxDecoration(color: AppColors.secColor, boxShadow: [
+        decoration: const BoxDecoration(color: AppColors.secColor, boxShadow: [
           BoxShadow(blurRadius: 4, spreadRadius: 4, offset: Offset(4, 4))
         ]),
         child: Column(
@@ -298,7 +296,7 @@ class AppointPage extends StatelessWidget {
                     color: AppColors.fontColor,
                   ),
                 ),
-                Text(
+                const Text(
                   '₹ 800',
                   style: TextStyle(
                     color: AppColors.fontColor,
@@ -311,14 +309,14 @@ class AppointPage extends StatelessWidget {
             ),
             CustomButton(
               onpressed: () {},
-              child: Text(
+              width: double.infinity,
+              child: const Text(
                 'Book appointment',
                 style: TextStyle(
                     color: AppColors.secColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 17),
               ),
-              width: double.infinity,
             )
           ],
         ),

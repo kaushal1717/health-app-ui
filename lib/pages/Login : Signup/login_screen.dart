@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../consts/colors.dart';
-import '../widgets/buttons.dart';
+import '../../consts/colors.dart';
+import '../../widgets/buttons.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,13 +12,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isObscured = false;
-  bool _isLoading = false;
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _pwdController = TextEditingController();
+  final bool _isLoading = false;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _pwdController = TextEditingController();
   final _formKey = GlobalKey<State>();
   @override
   void dispose() {
-    // TODO: implement dispose
     _emailController.dispose();
     _pwdController.dispose();
     super.dispose();
@@ -32,8 +31,8 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: AppColors.secColor,
       body: _isLoading
-          ? Center(
-              child: const CircularProgressIndicator(),
+          ? const Center(
+              child: CircularProgressIndicator(),
             )
           : SingleChildScrollView(
               child: SafeArea(
@@ -51,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: screenHeight * 0.04,
                         ),
-                        Text(
+                        const Text(
                           'Healthcare App',
                           style: TextStyle(
                             fontSize: 30,
@@ -81,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     hintText: 'Enter the email',
-                                    prefixIcon: Icon(Icons.mail)),
+                                    prefixIcon: const Icon(Icons.mail)),
                               ),
                               SizedBox(
                                 height: screenHeight * 0.02,
@@ -100,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     hintText: 'Enter password',
-                                    prefixIcon: Icon(Icons.lock),
+                                    prefixIcon: const Icon(Icons.lock),
                                     suffixIcon: IconButton(
                                       icon: Icon(_isObscured
                                           ? Icons.visibility
@@ -119,7 +118,8 @@ class _LoginPageState extends State<LoginPage> {
                                 onpressed: () {
                                   Navigator.pushNamed(context, '/navbar');
                                 },
-                                child: Text(
+                                width: screenWidth * 0.9,
+                                child: const Text(
                                   'Sign in',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -127,7 +127,6 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 20,
                                       color: AppColors.secColor),
                                 ),
-                                width: screenWidth * 0.9,
                               )
                             ],
                           ),

@@ -13,7 +13,7 @@ class SettingsPage extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(top: 40),
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,7 +31,7 @@ class SettingsPage extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage('assets/person-2.jpeg'),
               ),
@@ -42,9 +42,9 @@ class SettingsPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              subtitle: Text('Profile'),
+              subtitle: const Text('Profile'),
             ),
-            Divider(
+            const Divider(
               height: 50,
               thickness: 1,
             ),
@@ -78,7 +78,7 @@ class SettingsPage extends StatelessWidget {
                 iconColor: Colors.cyan,
                 icon: Icons.info_outline_rounded,
                 name: 'About us'),
-            Divider(
+            const Divider(
               height: 40,
               thickness: 1,
             ),

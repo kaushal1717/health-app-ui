@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../consts/colors.dart';
-import '../pages/home_screen.dart';
-import '../pages/msg_screen.dart';
-import '../pages/schedule_screen.dart';
-import '../pages/settings_screen.dart';
+import '../pages/home/home_screen.dart';
+import '../pages/Message/msg_screen.dart';
+import '../pages/Schedule/schedule_screen.dart';
+import '../pages/Settings/settings_screen.dart';
 
 class NavBarWidget extends StatefulWidget {
   const NavBarWidget({super.key});
@@ -16,10 +16,10 @@ class NavBarWidget extends StatefulWidget {
 class _NavBarWidgetState extends State<NavBarWidget> {
   int _index = 0;
   final _screens = [
-    HomePage(),
+    const HomePage(),
     MsgPage(),
-    SchedulePage(),
-    SettingsPage(),
+    const SchedulePage(),
+    const SettingsPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -35,14 +35,14 @@ class _NavBarWidgetState extends State<NavBarWidget> {
           selectedItemColor: AppColors.primColor,
           unselectedItemColor: AppColors.fontColor,
           selectedLabelStyle:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           currentIndex: _index,
           onTap: (index) {
             setState(() {
               _index = index;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_filled), label: 'Home'),
             BottomNavigationBarItem(

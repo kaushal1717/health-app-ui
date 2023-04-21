@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  custom_clippers: ^2.0.0
   flutter:
     sdk: flutter
   google_fonts: ^4.0.3

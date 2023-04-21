@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/consts/colors.dart';
-import 'package:healthapp/pages/appt_screen.dart';
+import 'package:healthapp/pages/home/appt_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                     style: GoogleFonts.ubuntu(
                         fontSize: 34, fontWeight: FontWeight.w600),
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 24,
                     backgroundImage: AssetImage('assets/person-2.jpeg'),
                   ),
@@ -63,11 +63,11 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                         color: AppColors.primColor,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             offset: Offset(4, 4),
@@ -86,17 +86,15 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
                             color: AppColors.secColor,
                             shape: BoxShape.circle,
                           ),
-                          child: Container(
-                            child: Icon(
-                              Icons.add,
-                              color: AppColors.primColor,
-                              size: 25,
-                            ),
+                          child: const Icon(
+                            Icons.add,
+                            color: AppColors.primColor,
+                            size: 25,
                           ),
                         ),
                         SizedBox(height: screenHeight * 0.03),
@@ -105,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.notoSerif(
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
@@ -119,11 +117,11 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                         color: AppColors.secColor,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             offset: Offset(4, 4),
@@ -142,17 +140,15 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
                             color: AppColors.primColor,
                             shape: BoxShape.circle,
                           ),
-                          child: Container(
-                            child: Icon(
-                              Icons.home,
-                              color: AppColors.secColor,
-                              size: 25,
-                            ),
+                          child: const Icon(
+                            Icons.home,
+                            color: AppColors.secColor,
+                            size: 25,
                           ),
                         ),
                         SizedBox(height: screenHeight * 0.03),
@@ -161,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.notoSerif(
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
@@ -178,7 +174,7 @@ class _HomePageState extends State<HomePage> {
               height: screenHeight * 0.02,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'What are your symptoms',
                 style: GoogleFonts.notoSerif(
@@ -198,12 +194,13 @@ class _HomePageState extends State<HomePage> {
                 itemCount: symptoms.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                         color: AppColors.secColor,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.grey,
                             blurRadius: 5,
@@ -235,11 +232,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemCount: 4,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   String ind = index.toString();
                   return InkWell(
@@ -247,15 +244,15 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AppointPage()));
+                              builder: (context) => const AppointPage()));
                     },
                     child: Container(
-                      margin: EdgeInsets.all(10),
-                      padding: EdgeInsets.symmetric(vertical: 15),
+                      margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.grey,
                               blurRadius: 5,
@@ -283,7 +280,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star,
                                 color: Colors.amber,
                               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../pages/login_screen.dart';
-import '../pages/welcome_screen.dart';
+import 'pages/Login : Signup/login_screen.dart';
+import 'pages/Login : Signup/welcome_screen.dart';
 import '../widgets/navbar.dart';
 import '../consts/colors.dart';
 
@@ -11,13 +11,13 @@ Future<void> main() async {
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
         colorScheme:
-            ColorScheme.light().copyWith(primary: AppColors.primColor)),
-    home: WelcomeScreen(),
+            const ColorScheme.light().copyWith(primary: AppColors.primColor)),
+    home: const NavBarWidget(),
     routes: {
-      '/welcomescr': (context) => WelcomeScreen(),
-      '/signinscr': (context) => LoginPage(),
-      '/signup': (context) => LoginPage(),
-      '/navbar': (context) => NavBarWidget(),
+      '/welcomescr': (context) => const WelcomeScreen(),
+      '/signinscr': (context) => const LoginPage(),
+      '/signup': (context) => const LoginPage(),
+      '/navbar': (context) => const NavBarWidget(),
     },
   ));
 }
@@ -25,5 +25,5 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
-  Widget build(BuildContext context) => Scaffold();
+  Widget build(BuildContext context) => const Scaffold();
 }

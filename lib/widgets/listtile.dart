@@ -20,11 +20,11 @@ class CustomTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: ListTile(
         onTap: onTap,
         leading: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: color,
             shape: BoxShape.circle,
@@ -42,7 +42,7 @@ class CustomTile extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: 20),
         ),
-        trailing: Icon(Icons.arrow_forward_ios_rounded),
+        trailing: const Icon(Icons.arrow_forward_ios_rounded),
       ),
     );
   }

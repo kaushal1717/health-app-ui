@@ -21,11 +21,11 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onpressed,
-      child: child,
       height: height,
       minWidth: width,
       color: color,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+      child: child,
     );
   }
 }
