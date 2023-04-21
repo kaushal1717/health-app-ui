@@ -52,24 +52,27 @@ class ChatScreen extends StatelessWidget {
           ]),
           child: Row(children: [
             const Padding(
-              padding: EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8, bottom: 10),
               child: Icon(
                 Icons.add,
                 size: 30,
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 5),
+              padding: EdgeInsets.only(left: 5, bottom: 10),
               child: Icon(Icons.emoji_emotions_outlined, color: Colors.black),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10, bottom: 10),
               child: Container(
                 alignment: Alignment.centerRight,
                 width: screenWidth * 0.8,
                 child: TextFormField(
+                  textAlignVertical: TextAlignVertical.center,
+                  cursorHeight: 19,
                   decoration: const InputDecoration(
                     hintText: 'Type Something',
+                    hintStyle: TextStyle(fontSize: 17),
                     border: InputBorder.none,
                     suffixIcon: Icon(
                       Icons.send,

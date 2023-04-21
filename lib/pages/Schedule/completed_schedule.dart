@@ -40,8 +40,8 @@ class Completed extends StatelessWidget {
                             BoxShadow(
                                 color: Colors.grey,
                                 offset: Offset(2, 2),
-                                blurRadius: 2,
-                                spreadRadius: 4),
+                                blurRadius: 1,
+                                spreadRadius: 2),
                           ]),
                       child: SizedBox(
                         width: screenWidth,
@@ -129,25 +129,6 @@ class Completed extends StatelessWidget {
                                       )
                                     ],
                                   )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(bottom: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: const [
-                                  // CustomButton(
-                                  //   onpressed: () {},
-                                  //   child: Text(
-                                  //     'Cancel',
-                                  //     style: TextStyle(
-                                  //         fontSize: 18,
-                                  //         fontWeight: FontWeight.w600),
-                                  //   ),
-                                  //   color: Colors.grey.shade200,
-                                  // ),
                                 ],
                               ),
                             ),

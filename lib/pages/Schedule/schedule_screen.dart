@@ -38,7 +38,7 @@ class _SchedulePageState extends State<SchedulePage> {
           ),
           SizedBox(height: screenHeight * 0.02),
           Container(
-            margin: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
+            margin: const EdgeInsets.symmetric(horizontal: 55),
             decoration: BoxDecoration(
               color: const Color(0xFFF4F6FA),
               borderRadius: BorderRadius.circular(10),

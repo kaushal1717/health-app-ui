@@ -47,8 +47,8 @@ class Upcoming extends StatelessWidget {
                             BoxShadow(
                                 color: Colors.grey,
                                 offset: Offset(2, 2),
-                                blurRadius: 2,
-                                spreadRadius: 4),
+                                blurRadius: 1,
+                                spreadRadius: 2),
                           ]),
                       child: SizedBox(
                         width: screenWidth,

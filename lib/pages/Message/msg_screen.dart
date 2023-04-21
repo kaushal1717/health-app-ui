@@ -65,8 +65,13 @@ class MsgPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
+                    cursorHeight: 18,
+                    textAlignVertical: TextAlignVertical.center,
                     decoration: const InputDecoration(
                         hintText: 'Search',
+                        hintStyle: TextStyle(
+                          fontSize: 20,
+                        ),
                         suffixIcon: Icon(Icons.search),
                         border: InputBorder.none),
                   ),

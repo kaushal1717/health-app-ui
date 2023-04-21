@@ -13,7 +13,7 @@ class ChatSample extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 150),
+            padding: const EdgeInsets.only(top: 20, left: 200),
             child: ClipPath(
               clipper: LowerNipMessageClipper(MessageType.send),
               child: Container(
@@ -42,7 +42,7 @@ class ChatSample extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 150),
+            padding: const EdgeInsets.only(top: 20, left: 200),
             child: ClipPath(
               clipper: LowerNipMessageClipper(MessageType.send),
               child: Container(

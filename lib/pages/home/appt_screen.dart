@@ -43,63 +43,72 @@ class AppointPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20, bottom: 20),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Icon(
-                            Icons.account_circle,
-                            size: 65,
-                          ),
-                          Text(
-                            'Doctor name',
-                            style: GoogleFonts.notoSans(
-                                fontSize: 25,
-                                color: AppColors.secColor,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'Designation',
-                            style: GoogleFonts.notoSans(
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          height: screenHeight * 0.03,
+                        ),
+                        const Icon(
+                          Icons.account_circle,
+                          size: 65,
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.01,
+                        ),
+                        Text(
+                          'Doctor name',
+                          style: GoogleFonts.notoSans(
+                              fontSize: 25,
                               color: AppColors.secColor,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.01,
+                        ),
+                        Text(
+                          'Designation',
+                          style: GoogleFonts.notoSans(
+                            color: AppColors.secColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromARGB(255, 195, 138, 142),
+                              ),
+                              child: const Icon(
+                                Icons.call,
+                                size: 22,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: screenHeight * 0.005,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromARGB(255, 195, 138, 142),
-                                ),
-                                child: const Icon(
-                                  Icons.call,
-                                  size: 22,
-                                ),
+                            SizedBox(width: screenWidth * 0.06),
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color.fromARGB(255, 195, 138, 142),
                               ),
-                              SizedBox(width: screenWidth * 0.06),
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color.fromARGB(255, 195, 138, 142),
-                                ),
-                                child: const Icon(
-                                  Icons.chat_bubble,
-                                  size: 22,
-                                ),
+                              child: const Icon(
+                                Icons.chat_bubble,
+                                size: 22,
                               ),
-                            ],
-                          )
-                        ]),
-                  ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        )
+                      ]),
                 ],
               ),
             ),
@@ -120,8 +129,8 @@ class AppointPage extends StatelessWidget {
                   Text(
                     'About Doctor',
                     style: GoogleFonts.notoSerif(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                         color: AppColors.fontColor),
                   ),
                   SizedBox(
@@ -129,10 +138,10 @@ class AppointPage extends StatelessWidget {
                   ),
                   Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum vel risus consequat.',
-                    style: GoogleFonts.notoSans(),
+                    style: GoogleFonts.notoSans(fontSize: 15),
                   ),
                   SizedBox(
-                    height: screenHeight * 0.0175,
+                    height: screenHeight * 0.03,
                   ),
                   Row(
                     children: [
@@ -168,7 +177,7 @@ class AppointPage extends StatelessWidget {
                             color: AppColors.fontColor),
                       ),
                       SizedBox(
-                        width: screenWidth * 0.37,
+                        width: screenWidth * 0.47,
                       ),
                       InkWell(
                         onTap: () {},
@@ -181,6 +190,9 @@ class AppointPage extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.02,
                   ),
                   SizedBox(
                       height: screenHeight * 0.2,
@@ -251,6 +263,9 @@ class AppointPage extends StatelessWidget {
                               ),
                             );
                           })),
+                  SizedBox(
+                    height: screenHeight * 0.17,
+                  ),
                   Text(
                     'Location',
                     style: GoogleFonts.notoSerif(

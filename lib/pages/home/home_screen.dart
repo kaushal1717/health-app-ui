@@ -63,6 +63,8 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {},
                   child: Container(
+                    height: screenHeight * 0.17,
+                    width: screenWidth * 0.4,
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                         color: AppColors.primColor,
@@ -91,24 +93,26 @@ class _HomePageState extends State<HomePage> {
                             color: AppColors.secColor,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(
-                            Icons.add,
-                            color: AppColors.primColor,
-                            size: 25,
+                          child: Container(
+                            child: const Icon(
+                              Icons.add,
+                              color: AppColors.primColor,
+                              size: 25,
+                            ),
                           ),
                         ),
                         SizedBox(height: screenHeight * 0.03),
                         Text(
                           'Clinic visit',
                           style: GoogleFonts.notoSerif(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         const SizedBox(
                           height: 5,
                         ),
                         Text(
                           'Make an appointment',
-                          style: GoogleFonts.openSans(),
+                          style: GoogleFonts.openSans(fontSize: 15),
                         ),
                       ],
                     ),
@@ -117,6 +121,8 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {},
                   child: Container(
+                    height: screenHeight * 0.17,
+                    width: screenWidth * 0.4,
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                         color: AppColors.secColor,
@@ -145,10 +151,12 @@ class _HomePageState extends State<HomePage> {
                             color: AppColors.primColor,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(
-                            Icons.home,
-                            color: AppColors.secColor,
-                            size: 25,
+                          child: Container(
+                            child: const Icon(
+                              Icons.home,
+                              color: AppColors.secColor,
+                              size: 25,
+                            ),
                           ),
                         ),
                         SizedBox(height: screenHeight * 0.03),
